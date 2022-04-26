@@ -1,0 +1,29 @@
+{
+  "extends": "./base.json",
+  "compilerOptions": {
+    "rootDirs": [
+      "./src",
+      "../.redwood/types/mirror/api/src"
+    ],
+    "paths": {
+      "src/*": [
+        "./src/*",
+        "../.redwood/types/mirror/api/src/*"
+      ],
+      "types/*": [
+        "./types/*",
+        "../types/*"
+      ],
+      "@redwoodjs/testing": [
+        "../node_modules/@redwoodjs/testing/api"
+      ]
+    },
+    "typeRoots": [
+      "../node_modules/@types",
+      "./node_modules/@types"
+    ],
+    "types": [
+      "jest"
+    ]
+  }
+}

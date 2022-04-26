@@ -1,0 +1,3 @@
+# tsconfig
+
+shareable base tsconfigs

@@ -1,0 +1,11 @@
+{
+  "extends": "tsconfig/web.json",
+  "compilerOptions": {
+    "include": [
+      "src",
+      "../.redwood/types/includes/all-*",
+      "../.redwood/types/includes/api-*",
+      "../types"
+    ]
+  }
+}

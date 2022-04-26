@@ -1,0 +1,46 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "api",
+      "web",
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "page": "yarn rw g page",
+    "layout": "yarn rw g layout",
+    "scaffold": "yarn rw g scaffold",
+    "cell": "yarn rw g cell",
+    "component": "yarn rw g component",
+    "sdl": "yarn rw g sdl",
+    "migrate": "yarn rw prisma migrate dev",
+    "studio": "yarn rw prisma migrate",
+    "secret": "yarn rw g secret",
+    "storybook": "yarn rw storybook",
+    "build": "yarn rw build",
+    "console": "yarn rw console",
+    "destory": "yarn rw destory",
+    "lint": "yarn rw lint",
+    "serve": "yarn rw serve",
+    "vercel": "yarn rw setup deploy vercel",
+    "deploy": "yarn rw deploy vercel",
+    "test": "yarn rw test",
+    "dev": "yarn rw dev"
+  },
+  "devDependencies": {
+    "@redwoodjs/core": "1.1.1"
+  },
+  "eslintConfig": {
+    "extends": "@redwoodjs/eslint-config",
+    "root": true
+  },
+  "engines": {
+    "node": ">=14.19 <=16.x",
+    "yarn": ">=1.15"
+  },
+  "prisma": {
+    "seed": "yarn rw exec seed"
+  },
+  "packageManager": "yarn@3.2.0"
+}

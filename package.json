@@ -1,0 +1,32 @@
+{
+  "name": "@blash-dev/create-blash-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./scripts/index.js",
+  "files": [
+    "scripts",
+    "template"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.27",
+    "typescript": "^4.6.3"
+  },
+  "packageManager": "pnpm@6.32.3",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "zx": "^6.1.0"
+  },
+  "engines": {
+    "node": ">=14.19 <=16.x"
+  }
+}
