@@ -1,7 +1,7 @@
 {
   "name": "create-blash-app",
-  "version": "1.1.0",
-  "description": "",
+  "version": "1.1.1",
+  "description": "Create a very opinionated template for Blash Dev Team application",
   "main": "./scripts/index.js",
   "bin": "./scripts/index.js",
   "files": [
@@ -9,13 +9,9 @@
     "template"
   ],
   "type": "module",
-  "scripts": {
-    "build": "tsc"
-  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@6.32.3",
+  "author": "Jimmy Moon <ragingwind@gmail.com>",
+  "license": "AGPL",
   "publishConfig": {
     "access": "public"
   },
