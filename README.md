@@ -12,8 +12,6 @@ npx create-blash-app ./your-app
 yarn create blash-app ./your-app
 ```
 
-yarn create
-
 # Tech Stack
 
 - Prisma.js
