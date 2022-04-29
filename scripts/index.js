@@ -1,10 +1,12 @@
-import 'zx/globals'
-import { echo } from 'zx/experimental'
-import path from "path"
+#!/usr/bin/env node
+
+import fs from 'fs-extra';
+import chalk from 'chalk';
+import { resolve, dirname } from 'path';
 import { fileURLToPath } from "url"
 
 const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __dirname = dirname(__filename)
 
 const errorNoPathName = `
 Please specify the project directory
@@ -18,25 +20,31 @@ const errorExistPath = (pathname) => `
 ${chalk.red(pathname)} already exists and is not empty
 `;
 
+const succeedCreate = (pathname) => `
+Project created successfully! at ${chalk.green(pathname)}
+
+cd ${pathname}
+yarn install
+`;
+
 try {
-  let pathname = argv._[0];
+  const pathname = process.argv[2];
 
   if (!pathname) {
     throw new Error(errorNoPathName);
   }
 
-  let resolvedPathname = path.resolve(process.cwd(), pathname);
-
-  let exist = await fs.pathExistsSync(resolvedPathname);
+  const resolvedPathname = resolve(process.cwd(), pathname);
+  const exist = await fs.pathExistsSync(resolvedPathname);
 
   if (exist) {
-    // echo(errorExistPath(resolvedPathname));
-    // await quiet($`exit 1`);
     throw new Error(errorExistPath(resolvedPathname));
   }
 
-  // await fs.mkdirpSync(resolvedPathname);
-  await fs.copySync(path.resolve(__dirname, '../template'), resolvedPathname);
+  await fs.mkdirpSync(resolvedPathname);
+  await fs.copySync(resolve(__dirname, '../template'), resolvedPathname);
+
+  console.log(succeedCreate(pathname));
 } catch (p) {
-  echo(p.message);
+  console.log(p.message);
 }
